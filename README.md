@@ -36,7 +36,8 @@ It provides RESTful APIs for user authentication, product management, order proc
 git clone https://github.com/your-username/ecommerce-backend.git
 cd ecommerce-backend
 ```
-### 2. Configure the database
+### 2. Configure the database 
+You can import ***bocchiweb_db.sql*** to create database or you can create your own database
 Update application.properties
 ```
 spring:
