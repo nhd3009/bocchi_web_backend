@@ -1,7 +1,7 @@
 # 🛒 E-Commerce Backend API
 
 This is the backend service for a simple E-Commerce application, built with **Spring Boot**, **Spring Security**, **JWT**, and **MySQL**.  
-It provides RESTful APIs for user authentication, product management, order processing, review & rating, etc.
+It uses Custom API Response to provide RESTful APIs for user authentication, product management, order processing, review & rating, etc.
 
 ---
 
@@ -9,15 +9,15 @@ It provides RESTful APIs for user authentication, product management, order proc
 
 - Java 17
 - Spring Boot 3
-- Spring Security + JWT
+- Spring Security + JWT + OAuth2
 - MySQL
-- Lombok
 - Maven
 
 ---
 
 ## 📦 Features
 
+- ✅ Custom API Response
 - ✅ User Registration / Login / Refresh Token
 - ✅ Role-based Authorization (Admin / User)
 - ✅ Product Management (CRUD)
@@ -54,7 +54,11 @@ spring:
 ./mvnw clean install
 ./mvnw spring-boot:run
 ```
-App runs on: http://localhost:8080
+- App runs on: http://localhost:8080
+- Account for Admin: admin@gmail.com
+- Password for Admin: admin
+- Account for User: user@gmail.com
+- Password for User: user
 
 ## 📖 API Documentation
 Swagger UI is available at:
