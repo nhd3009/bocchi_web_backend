@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Backend API
+# 🛒 E-Commerce Backend API (Frontend in developement)
 
 This is the backend service for a simple E-Commerce application, built with **Spring Boot**, **Spring Security**, **JWT**, and **MySQL**.  
 It uses Custom API Response to provide RESTful APIs for user authentication, product management, order processing, review & rating, etc.
