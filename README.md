@@ -64,8 +64,12 @@ spring:
 Swagger UI is available at:
 👉 http://localhost:8080/swagger-ui/index.html
 
+## Screenshots:
+![image](https://github.com/user-attachments/assets/2e0f7270-682b-4cdf-becc-6d257f8188b6)
+![image](https://github.com/user-attachments/assets/ffa274e4-6529-477f-88e4-3435a4c1fd54)
+![image](https://github.com/user-attachments/assets/383135b1-32cd-461d-b52b-19241c4f86fe)
+
 ## 👨‍💻 Author
 - Cupcake
 - GitHub: @nhd3009
-
 
