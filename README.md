@@ -73,3 +73,30 @@ Swagger UI is available at:
 - Cupcake
 - GitHub: @nhd3009
 
+## 🐳 Run with docker
+1. Build and run with Docker Compose
+```
+docker-compose up -d
+```
+- The backend app will be available at: http://localhost:8081
+- MySQL will be available at: localhost:3307 (user: bocchi, password: bocchi123, database: bocchiweb)
+- The uploads folder will be mounted for file storage.
+
+2. Stop all containers
+```
+docker-compose down
+```
+
+3. Rebuild the image when u want to change the code
+```
+docker-compose up -d --build
+```
+
+4. Access Swagger UI
+```
+http://localhost:8081/swagger-ui/index.html
+```
+
+5. Notes
+
+- If port 8081 or 3307 is already in use on your machine, edit the ports section in docker-compose.yml.
