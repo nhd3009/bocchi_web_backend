@@ -69,10 +69,6 @@ Swagger UI is available at:
 ![image](https://github.com/user-attachments/assets/ffa274e4-6529-477f-88e4-3435a4c1fd54)
 ![image](https://github.com/user-attachments/assets/383135b1-32cd-461d-b52b-19241c4f86fe)
 
-## 👨‍💻 Author
-- Cupcake
-- GitHub: @nhd3009
-
 ## 🐳 Run with docker
 1. Build and run with Docker Compose
 ```
@@ -100,3 +96,58 @@ http://localhost:8081/swagger-ui/index.html
 5. Notes
 
 - If port 8081 or 3307 is already in use on your machine, edit the ports section in docker-compose.yml.
+
+## 🐳 Run with Pre-built Docker Image
+
+If you don't want to build the backend image yourself, you can use the pre-built image from Docker Hub:
+```
+docker image pull nhdcupcake/bocchiweb:latest
+```
+1. Create a docker-compose.yml file with the following content
+```
+version: '3.8'
+
+services:
+  app:
+    image: nhdcupcake/bocchiweb:latest
+    ports:
+      - "8081:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/bocchiweb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=bocchi
+      - SPRING_DATASOURCE_PASSWORD=bocchi123
+    volumes:
+      - ./uploads:/app/uploads
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_DATABASE=bocchiweb
+      - MYSQL_USER=bocchi
+      - MYSQL_PASSWORD=bocchi123
+      - MYSQL_ROOT_PASSWORD=root123
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./bocchiweb_db.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  mysql_data:
+```
+
+2. Start the services
+```
+docker-compose up -d
+```
+- The backend app will be available at: http://localhost:8081
+
+3. Notes
+Make sure you have the bocchiweb_db.sql file in the same directory as your docker-compose.yml if you want to initialize the database.
+
+
+## 👨‍💻 Author
+- Cupcake
+- GitHub: @nhd3009
